@@ -21,7 +21,7 @@ class ClientHandler(threading.Thread):
                         print(f"[SENDING] response to client {self.addr}")
                         self.conn.sendall(response.encode('utf-8'))
                     elif message.startswith("QUIT"):
-                        print(f"[CLIENT EXIT] client from {self.addr} has exited. Bye bye!")
+                        print(f"client {self.addr} exited")
                         response = "invalid req\r\n"
                         self.conn.sendall(response.encode('utf-8'))
                     else:
